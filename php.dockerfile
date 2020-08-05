@@ -1,6 +1,5 @@
-FROM php7.3-fpm
+FROM php:7.4.0-fpm-alpine
 
-RUN pecl install mongodb \
-    &&  echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongo.ini
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 
-
+RUN install-php-extensions gd xdebug mongodb
