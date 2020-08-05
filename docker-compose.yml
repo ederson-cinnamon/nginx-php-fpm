@@ -17,7 +17,7 @@ services:
        networks:
            - nginxphp
      php:
-       image: php:7.1.11-fpm-alpine
+       image: php:7.4-fpm-alpine
        volumes:
            - ./public_html:/public_html
        expose:
