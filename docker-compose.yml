@@ -17,9 +17,7 @@ services:
        networks:
            - nginxphp
      php:
-       build:
-         context: .
-         dockerfile: php.dockerfile
+       image: php:7.1.11-fpm-alpine
        volumes:
            - ./public_html:/public_html
        expose:
