@@ -1,1 +1,6 @@
-FROM php:7.4-fpm-alpine
+FROM php7.3-fpm
+
+RUN pecl install mongodb \
+    &&  echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongo.ini
+
+
