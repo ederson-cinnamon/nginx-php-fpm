@@ -31,7 +31,7 @@ services:
      certbot:
        container_name: certbot         
        image: certbot/certbot:latest
-       command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email admin@cinamon.digital --agree-tos --no-eff-email -d api.esllist.com
+       command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email admin@cinamon.digital --agree-tos --no-eff-email -d web2.esllist.com
        volumes:
           - ./certbot/conf/:/etc/letsencrypt
           - ./certbot/logs/:/var/log/letsencrypt
