@@ -36,15 +36,6 @@ services:
           - ./certbot/conf/:/etc/letsencrypt
           - ./certbot/logs/:/var/log/letsencrypt
           - ./certbot/data:/usr/share/nginx/html/letsencrypt      
-     composer:
-       image: composer:latest
-       container_name: composer
-       volumes:
-         - ./public_html:/public_html
-       working_dir: /public_html
-       depends_on:
-         - php
-       networks:
-        - nginxphp           
+       
 networks:
      nginxphp:
