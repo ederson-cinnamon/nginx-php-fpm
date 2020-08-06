@@ -32,9 +32,40 @@ services:
   certbot:
     container_name: certbot
     image: 'certbot/certbot:latest'
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email admin@cinamon.digital --agree-tos --no-eff-email -d *.chi.coffee
     volumes:
       - './certbot/conf/:/etc/letsencrypt'
       - './certbot/logs/:/var/log/letsencrypt'
       - './certbot/data:/usr/share/nginx/html/letsencrypt'
+  composer:
+    image: composer:latest
+    container_name: composer
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    networks:
+      - laravel
+
+  npm:
+    image: node:13.7
+    container_name: npm
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ['npm']
+
+  artisan:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: artisan
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql
+    working_dir: /var/www/html
+    entrypoint: ['php', '/var/www/html/artisan']      
 networks:
   nginxphp: null
