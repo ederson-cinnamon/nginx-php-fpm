@@ -1,0 +1,8 @@
+2020-08-06 03:21:48,913:DEBUG:certbot._internal.main:certbot version: 1.7.0
+2020-08-06 03:21:48,914:DEBUG:certbot._internal.main:Arguments: []
+2020-08-06 03:21:48,914:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2020-08-06 03:21:48,930:DEBUG:certbot._internal.log:Root logging level set at 20
+2020-08-06 03:21:48,931:INFO:certbot._internal.log:Saving debug log to /var/log/letsencrypt/letsencrypt.log
+2020-08-06 03:21:48,932:DEBUG:certbot._internal.plugins.selection:Requested authenticator None and installer None
+2020-08-06 03:21:48,932:DEBUG:certbot._internal.plugins.selection:No candidate plugin
+2020-08-06 03:21:48,932:DEBUG:certbot._internal.plugins.selection:Selected authenticator None and installer None
