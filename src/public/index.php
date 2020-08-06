@@ -1,2 +1,0 @@
-testing
-<?php  phpinfo();
