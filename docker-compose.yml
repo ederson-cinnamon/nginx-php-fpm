@@ -46,7 +46,7 @@ services:
     depends_on:
       - php
     networks:
-      - laravel
+      - nginxphp
 
   npm:
     image: node:13.7
